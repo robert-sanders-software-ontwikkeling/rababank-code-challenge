@@ -1,0 +1,15 @@
+<div class ="card" data-toggle="tooltip" data-placement="top" title="Saldo’s komen uit het CRM-systeem" >
+  <div class="card-body">
+    <h5 class="card-title">{{product.ServiceName}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{product.ProductName}}</h6>
+    
+    <div *ngIf="product.CreditVolume" class="card-text alert-success" >
+      {{product.CreditVolume | currency:'EUR':true}}
+    </div>
+
+    <div *ngIf="product.DebitVolume" class="card-text alert-danger" >
+      {{-1 * product.DebitVolume | currency:'EUR':true}}
+    </div>
+   
+  </div>
+</div>
